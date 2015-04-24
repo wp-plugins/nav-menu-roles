@@ -3,7 +3,7 @@
 Plugin Name: Nav Menu Roles
 Plugin URI: http://www.kathyisawesome.com/449/nav-menu-roles/
 Description: Hide custom menu items based on user roles
-Version: 1.6.4
+Version: 1.6.5
 Author: Kathy Darling
 Author URI: http://www.kathyisawesome.com
 License: GPL2
@@ -309,6 +309,13 @@ class Nav_Menu_Roles {
 
 		    <input type="hidden" class="nav-menu-id" value="<?php echo $item->ID ;?>" />
 
+		    <div class="logged-input-holder" style="float: left; width: 30%;">
+		        <input type="radio" class="nav-menu-logged-in-out" name="nav-menu-logged-in-out[<?php echo $item->ID ;?>]" id="nav_menu_by_role-for-<?php echo $item->ID ;?>" <?php checked( '', $logged_in_out ); ?> value="" />
+		        <label for="nav_menu_by_role-for-<?php echo $item->ID ;?>">
+		            <?php _e( 'Everyone', 'nav-menu-roles'); ?>
+		        </label>
+		    </div>
+
 		    <div class="logged-input-holder" style="float: left; width: 35%;">
 		        <input type="radio" class="nav-menu-logged-in-out" name="nav-menu-logged-in-out[<?php echo $item->ID ;?>]" id="nav_menu_logged_out-for-<?php echo $item->ID ;?>" <?php checked( 'out', $logged_in_out ); ?> value="out" />
 		        <label for="nav_menu_logged_out-for-<?php echo $item->ID ;?>">
@@ -320,13 +327,6 @@ class Nav_Menu_Roles {
 		        <input type="radio" class="nav-menu-logged-in-out" name="nav-menu-logged-in-out[<?php echo $item->ID ;?>]" id="nav_menu_logged_in-for-<?php echo $item->ID ;?>" <?php checked( 'in', $logged_in_out ); ?> value="in" />
 		        <label for="nav_menu_logged_in-for-<?php echo $item->ID ;?>">
 		            <?php _e( 'Logged In Users', 'nav-menu-roles'); ?>
-		        </label>
-		    </div>
-
-		    <div class="logged-input-holder" style="float: left; width: 30%;">
-		        <input type="radio" class="nav-menu-logged-in-out" name="nav-menu-logged-in-out[<?php echo $item->ID ;?>]" id="nav_menu_by_role-for-<?php echo $item->ID ;?>" <?php checked( '', $logged_in_out ); ?> value="" />
-		        <label for="nav_menu_by_role-for-<?php echo $item->ID ;?>">
-		            <?php _e( 'By Role', 'nav-menu-roles'); ?>
 		        </label>
 		    </div>
 
